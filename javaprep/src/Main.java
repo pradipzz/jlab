@@ -12,6 +12,7 @@ public class Main {
     obj1.num_rev(123);
     System.out.println(swap(1,2));
         System.out.println(factorial(4));
+        System.out.println(obj1.fibonacci(11));
     }
     public static String String_rev(String S)
     {/* pradeep*/
@@ -49,12 +50,26 @@ public class Main {
     }
     public static int factorial(int num)
     {
-        int fac=0;
-        for(int i=1;i<num;i++)
+        int fac=1;
+        for(int i=1;i<=num;i++)
         {
-            fac=fac+num*i;
+            fac=fac*i;
         }
         return fac;
+    }
+    //fibonacci 0 1 1 2 3 5 8 13 21 34 55
+    public int fibonacci(int count)
+    {
+        int num1=0,num2=1,num3=0;
+        System.out.print(num1+" "+num2);
+        for(int i=2;i<count;i++)
+        {
+           num3=num1+num2;
+           num1=num2;
+           num2=num3;
+            System.out.print(" "+num3+" ");
+        }
+        return 0;
     }
 }
 
