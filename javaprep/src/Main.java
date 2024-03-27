@@ -1,6 +1,7 @@
 import com.sun.source.tree.BreakTree;
 
 import java.util.Scanner;
+import java.math.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -13,6 +14,29 @@ public class Main {
     System.out.println(swap(1,2));
         System.out.println(factorial(4));
         System.out.println(obj1.fibonacci(11));
+        if(isprime(10))
+        {
+            System.out.print(" is a prime.");
+        }
+        else{
+            System.out.println(" is not a prime.");
+        }
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the starting prime");
+        int start =sc.nextInt();
+        System.out.println("Enter the end prime");
+        int end=sc.nextInt();
+        for (int i=start;i<=end;i++)
+        {
+            if(isprime(i))
+            {
+                System.out.println(i+" is a prime.");
+            }
+            else{
+                System.out.println("null");
+            }
+        }
+
     }
     public static String String_rev(String S)
     {/* pradeep*/
@@ -70,6 +94,24 @@ public class Main {
             System.out.print(" "+num3+" ");
         }
         return 0;
+    }
+    //prime
+    public static boolean isprime(int num)
+    {
+//        System.out.print("The number "+num);
+        if(num<=1)
+        {
+            return false;
+        }
+
+        for(int i=2;i<=Math.sqrt(num);i++)
+        {
+            if (num % i == 0)
+                {
+                    return false;
+                }
+        }
+        return true;
     }
 }
 
