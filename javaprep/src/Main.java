@@ -63,6 +63,8 @@ public class Main {
 //            System.out.print(" Not amstrong");
 //        }
         perfect_num(28);
+        Magic_num(163);
+        
     }
     public static String String_rev(String S) {/* pradeep*/
         String rc = "";
@@ -182,7 +184,7 @@ public class Main {
             return true;
         } else return false;
     }
-    public static void perfect_num(int num)
+    public static Boolean perfect_num(int num)
     {
         int sum=0;
         for(int i=1;i<=num/2;i++)
@@ -195,9 +197,30 @@ public class Main {
         System.out.println(sum);
         if(sum==num)
         {
-            System.out.println("Is perfect num");
+            return true;
         }
-        else System.out.println("not Perfect num");
+        else return false;
+    }
+    public static void Magic_num(int n)
+    {
+        int Remainder,sum=0,con=n;
+        while(con>9) {
+            while ((con > 0)) {
+                Remainder = con % 10;
+                sum += Remainder;
+                con = con / 10;
+            }
+            con = sum;
+            sum = 0;
+        }
+        if(con==1)
+        {
+            System.out.println("It is Magic num");
+        }
+        else
+        {
+            System.out.println("Not a magic number");
+        }
     }
 
 }
